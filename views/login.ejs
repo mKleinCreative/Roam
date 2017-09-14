@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+  </head>
+  <body>
+    <form class="login-form" action="/users/login" method="post">
+      <input type="text" name="username" placeholder="User Name">
+      <input type="password" name="password" placeholder="Password">
+      <button type="submit">Log In</button>
+    </form>
+    <div>
+      <p>Don't have an account?</p>
+      <a href="/users/create">Create one today!</a>
+    </div>
+    <% if (error === true) {%>
+      <p>Please check your username/password and try again.</p>
+    <% } %>
+  </body>
+</html>

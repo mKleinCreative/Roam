@@ -6,9 +6,11 @@
   "scripts": {
     "start": "nodemon bin/www",
     "start:server": "DEBUG=myapp:* npm start",
-    "db:init": "psql < ./database/schema.sql"
+    "db:init": "psql < ./database/schema.sql",
+    "db:reset": "dropdb roam && createdb roam && npm run db:init"
   },
   "dependencies": {
+    "bcrypt": "^1.0.3",
     "body-parser": "~1.16.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
@@ -17,6 +19,7 @@
     "express-session": "^1.15.5",
     "morgan": "~1.7.0",
     "nodemon": "^1.12.0",
+    "pg-promise": "^6.5.1",
     "serve-favicon": "~2.3.2"
   }
 }
